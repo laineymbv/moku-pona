@@ -55,11 +55,11 @@ def submit_plan():
             cur.close()
             con.close()
             return redirect(url_for('index'))
-    cur.close
-    con.close
+    cur.close()
+    con.close()
     return "Error: Missing form entries", 400
 @app.route("/toggle_eaten/<int:plan_id>", methods=["POST"])
-# Toggles if a meal is eaten
+# Toggles marker for if a meal is eaten
 def toggle_eaten(plan_id):
     is_eaten = 1 if request.form.get("is_meal_eaten") else 0
     con = sqlite3.connect(DB_FILE)
