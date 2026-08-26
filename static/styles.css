@@ -1,12 +1,12 @@
 :root {
-    --bg-top: #f9fbff;
-    --bg-bottom: #dff3f5;
-    --panel: #ffffff;
-    --text: #1f2d3d;
-    --muted: #5b6b7d;
-    --accent: #0f766e;
-    --accent-hover: #0b5e58;
-    --border: #d8e2ea;
+    --bg-top: #00801c;
+    --bg-bottom: #007a00;
+    --panel: #53260b;
+    --text: #dce5e7;
+    --muted: #b4b6b8;
+    --accent: #dbfffc;
+    --accent-hover: #cefffc;
+    --border: #381608;
     --shadow: 0 12px 34px rgba(15, 42, 61, 0.12);
 }
 
@@ -118,13 +118,13 @@ input[type="text"]:focus {
 
 input[type="submit"] {
     margin-top: 0.4rem;
-    border: 0;
+    border: 3px solid var(--border);
     border-radius: 10px;
     padding: 0.68rem 1rem;
     font-size: 0.95rem;
     font-weight: 700;
     color: #ffffff;
-    background: linear-gradient(180deg, #0f9b8e 0%, var(--accent) 100%);
+    background: linear-gradient(180deg, #53260b 0%, #381608 100%);
     cursor: pointer;
     transition: transform 120ms ease, filter 120ms ease;
 }

@@ -7,6 +7,5 @@ Mealtracker is a CRUD application which allows you to enter the meals you have e
 - [x] Switch to SQLite
 - [x] Add Flask WebUI
 - [x] Replace plain Add Meals with Meal Planner
-- [ ] Calorie Tracker
-- [ ] Recipe List
-- [ ] BYOK AI Recipe Importer
+- [ ] Add Recipe List and Manual Addition of Recipes
+- [ ] Extend Recipe List functionality with Automatic Import from online articles
