@@ -1,12 +1,12 @@
 :root {
-    --bg-top: #00801c;
-    --bg-bottom: #007a00;
-    --panel: #53260b;
-    --text: #dce5e7;
+    --bg-top: #ff8df9;
+    --bg-bottom: #98fff6;
+    --panel: #383634;
+    --text: #161718;
     --muted: #b4b6b8;
     --accent: #dbfffc;
     --accent-hover: #cefffc;
-    --border: #381608;
+    --border: #030303;
     --shadow: 0 12px 34px rgba(15, 42, 61, 0.12);
 }
 
@@ -124,7 +124,7 @@ input[type="submit"] {
     font-size: 0.95rem;
     font-weight: 700;
     color: #ffffff;
-    background: linear-gradient(180deg, #53260b 0%, #381608 100%);
+    background: linear-gradient(180deg, #494948 0%, #838281 100%);
     cursor: pointer;
     transition: transform 120ms ease, filter 120ms ease;
 }
@@ -181,4 +181,8 @@ p {
     .card {
         border-radius: 12px;
     }
+}
+
+.meal_list {
+    color: #fcfeff;
 }

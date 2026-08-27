@@ -1,6 +1,5 @@
 import sqlite3
 from flask import render_template, Blueprint
-from app import app
 dashboard_bp = Blueprint('dashboard', __name__)
 from app.dashboard.config import DB_FILE
 
