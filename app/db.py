@@ -11,19 +11,14 @@ def init_db():
     con = sqlite3.connect(DB_FILE)
     cur = con.cursor()
     cur.execute('''
-        CREATE TABLE IF NOT EXISTS meals (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            meal_name TEXT NOT NULL,
-            meal_date TEXT NOT NULL
-        )
-    ''')
-    cur.execute('''
         CREATE TABLE IF NOT EXISTS planned_meals (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             meal_date TEXT NOT NULL,
             meal_name TEXT NOT NULL,
             meal_time TEXT NOT NULL,
-            is_meal_eaten INTEGER
+            is_meal_eaten INTEGER,
+            meal_calories INTEGER,
+            day TEXT NOT NULL
         )
     ''')
     con.commit()

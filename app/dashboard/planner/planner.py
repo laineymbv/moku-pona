@@ -13,8 +13,9 @@ def submit_plan():
     meal_name_received = request.form.get("meal_name")
     meal_date_received = request.form.get("meal_date")
     meal_time_received = request.form.get("meal_time")
+    meal_calories_received = request.form.get("meal_calories")
     if meal_name_received and meal_date_received and meal_time_received:
-            cur.execute("INSERT INTO planned_meals (meal_name, meal_date, meal_time) VALUES (?, ?, ?)", (meal_name_received, meal_date_received, meal_time_received))
+            cur.execute("INSERT INTO planned_meals (meal_name, meal_date, meal_time, meal_calories) VALUES (?, ?, ?, ?)", (meal_name_received, meal_date_received, meal_time_received, meal_calories_received))
             con.commit()
             cur.close()
             con.close()
@@ -33,3 +34,13 @@ def toggle_eaten(plan_id):
     cur.close()
     con.close()
     return redirect(url_for('dashboard.index'))
+# Adds calories from a meal to the total for the day
+def add_calories_to_day(meal_date, meal_calories):
+    con = sqlite3.connect(DB_FILE)
+    cur = con.cursor()
+    cur.execute("UPDATE days SET calories_eaten = calories_eaten + ? WHERE day_date = ?", (meal_calories, meal_date))
+    if cur.rowcount == 0:
+        cur.execute("INSERT INTO days (day_date, calories_eaten) VALUES (?, ?)", (meal_date, meal_calories))
+    con.commit()
+    cur.close()
+    con.close()
